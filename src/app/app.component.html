@@ -1,4 +1,88 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="container pt-2">
+  <h3>Handling forms in Angular</h3>
+
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label for="name">Name</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="name"
+        placeholder="eg. Omar"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="age">Age</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="age"
+        placeholder="eg. 26"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="email">Email</label>
+      <input
+        class="form-control"
+        type="email"
+        formControlName="email"
+        placeholder="someone@email.com"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="password">Password</label>
+      <input
+        class="form-control"
+        type="password"
+        formControlName="password"
+        placeholder="********"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="phone">Phone number</label>
+      <input
+        class="form-control"
+        type="tel"
+        formControlName="phone"
+        placeholder="+ 11 22 33 44 55 678"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="graduationDate">Date of graduation</label>
+      <input
+        class="form-control"
+        type="date"
+        formControlName="graduationDate"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="phone">Note</label>
+      <textarea
+        class="form-control"
+        type="text"
+        formControlName="note"
+        placeholder="Your note here..."
+        rows="6"
+      >
+      </textarea>
+    </div>
+
+    <div class="d-grid gap-2">
+      <button
+        type="button"
+        class="btn btn-primary rounded-pill btn-lg"
+        (click)="onSubmit(form)"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+<toast-component></toast-component>
