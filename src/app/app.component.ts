@@ -49,10 +49,11 @@ export class AppComponent implements OnInit {
       if (!form.controls['name'].valid) {
         if (form.controls['name'].errors.required) {
           this.response.message = 'Name is required';
-        } else if (form.controls['name'].errors.minLength) {
+        } else if (form.controls['name'].errors.minlength) {
           this.response.message = 'Name needs to contain at least 2 characters';
         }
         this.response.source = 'name';
+        return;
       }
       if (!form.controls['age'].valid) {
         if (form.controls['age'].errors.required) {
@@ -61,6 +62,7 @@ export class AppComponent implements OnInit {
           this.response.message = 'You are too young';
         }
         this.response.source = 'age';
+        return;
       }
       if (!form.controls['email'].valid) {
         if (form.controls['email'].errors.required) {
@@ -69,21 +71,24 @@ export class AppComponent implements OnInit {
           this.response.message = 'Please enter a correct email';
         }
         this.response.source = 'email';
+        return;
       }
       if (!form.controls['password'].valid) {
         if (form.controls['password'].errors.required) {
           this.response.message = 'Password is required';
-        } else if (form.controls['age'].errors.minLength) {
+        } else if (form.controls['password'].errors.minLength) {
           this.response.message =
             'Password has to be at least 8 characters long';
         }
         this.response.source = 'password';
+        return;
       }
       if (!form.controls['phone'].valid) {
         if (form.controls['phone'].errors.required) {
           this.response.message = 'Phone is required';
         }
         this.response.source = 'phone';
+        return;
       }
     }
   }
