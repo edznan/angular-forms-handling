@@ -10,6 +10,12 @@
         formControlName="name"
         placeholder="eg. Omar"
       />
+      <p
+        *ngIf="response.type === 'error' && response.source === 'name'"
+        class="text-danger"
+      >
+        {{ response.message }}
+      </p>
     </div>
 
     <div class="mb-3">
@@ -20,6 +26,12 @@
         formControlName="age"
         placeholder="eg. 26"
       />
+      <p
+        *ngIf="response.type === 'error' && response.source === 'age'"
+        class="text-danger"
+      >
+        {{ response.message }}
+      </p>
     </div>
 
     <div class="mb-3">
@@ -30,6 +42,12 @@
         formControlName="email"
         placeholder="someone@email.com"
       />
+      <p
+        *ngIf="response.type === 'error' && response.source === 'email'"
+        class="text-danger"
+      >
+        {{ response.message }}
+      </p>
     </div>
 
     <div class="mb-3">
@@ -40,6 +58,12 @@
         formControlName="password"
         placeholder="********"
       />
+      <p
+        *ngIf="response.type === 'error' && response.source === 'password'"
+        class="text-danger"
+      >
+        {{ response.message }}
+      </p>
     </div>
 
     <div class="mb-3">
@@ -50,6 +74,12 @@
         formControlName="phone"
         placeholder="+ 11 22 33 44 55 678"
       />
+      <p
+        *ngIf="response.type === 'error' && response.source === 'phone'"
+        class="text-danger"
+      >
+        {{ response.message }}
+      </p>
     </div>
 
     <div class="mb-3">
@@ -84,5 +114,3 @@
     </div>
   </form>
 </div>
-
-<toast-component></toast-component>
