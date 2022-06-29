@@ -21,7 +21,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      age: new FormControl('', [Validators.required, Validators.min(18)]),
+      age: new FormControl('', [
+        Validators.required,
+        Validators.min(18),
+        Validators.max(85),
+      ]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
@@ -57,6 +61,8 @@ export class AppComponent implements OnInit {
           this.response.message = 'Age is required';
         } else if (form.controls['age'].errors.min) {
           this.response.message = 'You are too young';
+        } else if (form.controls['age'].errors.max) {
+          this.response.message = 'You are too old';
         }
         this.response.source = 'age';
         return;
