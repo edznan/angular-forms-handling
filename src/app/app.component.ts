@@ -12,9 +12,6 @@ import {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  @ViewChild('toastElement', { static: true })
-  toastEl!: ElementRef;
-
   form: FormGroup = new FormGroup({});
 
   response: any = {};
